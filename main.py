@@ -11,7 +11,7 @@ st.markdown(
 <style>
     .appview-container .main .block-container{{
         max-width: {1000}px;
-        padding-top: {1}rem;
+        padding-top: {.5}rem;
         padding-right: {3}rem;
         padding-left: {3}rem;
         padding-bottom: {0}rem;
@@ -24,8 +24,8 @@ st.markdown(
 # the main app
 done = False
 st.markdown("""
-# Remove Image background
-""")
+<h1> Remove Image background <p>LordKun Apps 👑</p></h1>
+""",unsafe_allow_html=True)
 img = st.file_uploader("Upload the image",type=["png","jpg","JPEG"])
 
 def get_image_download_link(img,filename,text,format):
