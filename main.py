@@ -22,7 +22,7 @@ st.markdown(
     )
 
 # the main app
-
+done = False
 st.markdown("""
 # Remove Image background
 """)
