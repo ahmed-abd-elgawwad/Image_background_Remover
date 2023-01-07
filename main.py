@@ -26,7 +26,7 @@ if img:
           st.image(image,"Uploaded Image")
 
     with col2:
-        removed_image = remove(image)
+        removed_image = Image.fromarray((remove(image))
         st.image(removed_image, "Removed Image")
         extenstion = img.name.split(".")[1]
         file_name = ( img.name.split(".")[0] )+"_removed_bg."+extenstion
