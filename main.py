@@ -13,9 +13,9 @@ st.markdown("""
 """)
 img = st.file_uploader("Upload the image",type=["png","jpg","JPEG"])
 
-def get_image_download_link(img,filename,text):
+def get_image_download_link(img,filename,text,format):
     buffered = BytesIO()
-    img.save(buffered)
+    img.save(buffered,format = format)
     img_str = b64encode(buffered.getvalue()).decode()
     href =  f'<a href="data:file/txt;base64,{img_str}" download="{filename}">{text}</a>'
     return href
@@ -28,11 +28,12 @@ if img:
 
     with col2:
         removed_image = remove(image)
+      
         st.image(removed_image, "Removed Image")
         extenstion = img.name.split(".")[1]
         file_name = ( img.name.split(".")[0] )+"_removed_bg."+extenstion
         # download the image
-        st.markdown(get_image_download_link(removed_image, file_name, 'Download'), unsafe_allow_html=True)
+        st.markdown(get_image_download_link(removed_image, file_name, 'Download',removed_image.format), unsafe_allow_html=True)
 
 
 hid_menu_bar = """
