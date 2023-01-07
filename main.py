@@ -16,7 +16,7 @@ img = st.file_uploader("Upload the image",type=["png","jpg","JPEG"])
 
 def get_image_download_link(img,filename,text,format):
     buffered = BytesIO()
-    img.save(buffered,format = "jpeg")
+    img.save(buffered,format = "png")
     img_str = b64encode(buffered.getvalue()).decode()
     href =  f'<a href="data:file/txt;base64,{img_str}" download="{filename}">{text}</a>'
     return href
@@ -24,8 +24,8 @@ def get_image_download_link(img,filename,text,format):
 if img:
     col1,col2 = st.columns(2)
     with col1:
-          image = plt.imread(img)
-#           image = Image.open(img)
+#           image = plt.imread(img)
+          image = Image.open(img)
           st.image(image,"Uploaded Image")
 
     with col2:
