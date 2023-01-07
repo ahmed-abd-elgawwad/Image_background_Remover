@@ -4,7 +4,24 @@ from io import BytesIO
 from base64 import b64encode
 from rembg import remove
 import matplotlib.pyplot as plt
+# setting the configrations of the app
 st.set_page_config(page_title="Backgound Remover")
+st.markdown(
+        f"""
+<style>
+    .appview-container .main .block-container{{
+        max-width: {1000}px;
+        padding-top: {1}rem;
+        padding-right: {3}rem;
+        padding-left: {3}rem;
+        padding-bottom: {0}rem;
+    }}
+</style>
+""",
+        unsafe_allow_html=True,
+    )
+
+# the main app
 
 st.markdown("""
 # Remove Image background
@@ -31,8 +48,10 @@ if img:
         st.image(removed_image, "Removed Image")
         extenstion = img.name.split(".")[1]
         file_name = ( img.name.split(".")[0] )+"_removed_bg."+extenstion
-        # download the image
-        st.markdown(get_image_download_link(removed_image, file_name, 'Download',removed_image.format), unsafe_allow_html=True)
+        done = True
+if done:
+    # download the image
+    st.markdown(get_image_download_link(removed_image, file_name, 'Download',removed_image.format), unsafe_allow_html=True)
 
 hid_menu_bar = """
 <style>
