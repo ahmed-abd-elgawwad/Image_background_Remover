@@ -3,6 +3,7 @@ from PIL import Image
 from io import BytesIO
 from base64 import b64encode
 from rembg import remove
+import matplotlib.pyplot as plt
 st.set_page_config(page_title="Backgound Remover")
 
 st.markdown("""
@@ -23,7 +24,7 @@ def get_image_download_link(img,filename,text):
 if img:
     col1,col2 = st.columns(2)
     with col1:
-          image = Image.open(img)
+          image = plt.imread(img)
           st.image(image,"Uploaded Image")
 
     with col2:
