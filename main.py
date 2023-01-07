@@ -3,7 +3,6 @@ from PIL import Image
 from io import BytesIO
 from base64 import b64encode
 from rembg import remove
-import matplotlib.pyplot as plt
 st.set_page_config(page_title="Backgound Remover")
 
 st.markdown("""
