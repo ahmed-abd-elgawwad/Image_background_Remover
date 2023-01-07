@@ -60,4 +60,3 @@ footer {visibility : hidden;}
 </style>
 """
 st.markdown(hid_menu_bar,unsafe_allow_html=True)
-st.markdown("Made by 💛 LordKun")
