@@ -15,7 +15,7 @@ img = st.file_uploader("Upload the image",type=["png","jpg","JPEG"])
 
 def get_image_download_link(img,filename,text,format):
     buffered = BytesIO()
-    img.save(buffered,format = format)
+    img.save(buffered,format = "RGBA")
     img_str = b64encode(buffered.getvalue()).decode()
     href =  f'<a href="data:file/txt;base64,{img_str}" download="{filename}">{text}</a>'
     return href
