@@ -8,9 +8,6 @@ st.set_page_config(page_title="Backgound Remover")
 
 st.markdown("""
 # Remove Image background
-1. upload your image
-2. remove the background
-3. download the result
 """)
 img = st.file_uploader("Upload the image",type=["png","jpg","JPEG"])
 
@@ -35,8 +32,9 @@ if img:
         extenstion = img.name.split(".")[1]
         file_name = ( img.name.split(".")[0] )+"_removed_bg."+extenstion
         # download the image
-        st.markdown(get_image_download_link(removed_image, file_name, 'Download',removed_image.format), unsafe_allow_html=True)
-
+        download_button = st.button("Dawnload Image")
+        if download_button:
+            st.markdown(get_image_download_link(removed_image, file_name, 'Download',removed_image.format), unsafe_allow_html=True)
 
 hid_menu_bar = """
 <style>
