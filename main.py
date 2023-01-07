@@ -32,7 +32,6 @@ if img:
         extenstion = img.name.split(".")[1]
         file_name = ( img.name.split(".")[0] )+"_removed_bg."+extenstion
         # download the image
-        download_button = st.button("Dawnload Image")
         st.markdown(get_image_download_link(removed_image, file_name, 'Download',removed_image.format), unsafe_allow_html=True)
 
 hid_menu_bar = """
