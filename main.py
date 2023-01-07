@@ -32,7 +32,6 @@ if img:
         removed_image = remove(image)
       
         st.image(removed_image, "Removed Image")
-        removed_image = Image.fromarray(removed_image)
         extenstion = img.name.split(".")[1]
         file_name = ( img.name.split(".")[0] )+"_removed_bg."+extenstion
         # download the image
