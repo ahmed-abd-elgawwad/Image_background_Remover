@@ -24,11 +24,11 @@ def get_image_download_link(img,filename,text):
 if img:
     col1,col2 = st.columns(2)
     with col1:
-          image = plt.imread(img)
+          image = Image.open(img)
           st.image(image,"Uploaded Image")
 
     with col2:
-        removed_image = Image.fromarray(remove(image))
+        removed_image = remove(image)
         st.image(removed_image, "Removed Image")
         extenstion = img.name.split(".")[1]
         file_name = ( img.name.split(".")[0] )+"_removed_bg."+extenstion
